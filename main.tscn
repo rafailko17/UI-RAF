@@ -1,0 +1,88 @@
+[gd_scene format=3 uid="uid://d27ebccroch8p"]
+
+[ext_resource type="Theme" uid="uid://dlid80fi1nvcl" path="res://main_theme.theme" id="1_ig7tw"]
+
+[node name="MainUI" type="Control" unique_id=735440666]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_ig7tw")
+
+[node name="HealthBarMargin" type="MarginContainer" parent="." unique_id=1468984788]
+layout_mode = 1
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HealthBarMargin" unique_id=1594563164]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HealthBarMargin/HBoxContainer" unique_id=872987164]
+layout_mode = 2
+text = "HP"
+
+[node name="ProgressBar" type="ProgressBar" parent="HealthBarMargin/HBoxContainer" unique_id=1265204596]
+custom_minimum_size = Vector2(200, 30)
+layout_mode = 2
+value = 75.0
+
+[node name="HotbarMargin" type="MarginContainer" parent="." unique_id=257092245]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_bottom = 30
+
+[node name="Hotbar" type="HBoxContainer" parent="HotbarMargin" unique_id=904487234]
+layout_mode = 2
+alignment = 1
+
+[node name="Button1" type="Button" parent="HotbarMargin/Hotbar" unique_id=2063920863]
+custom_minimum_size = Vector2(120, 50)
+layout_mode = 2
+text = "Item A"
+
+[node name="Button2" type="Button" parent="HotbarMargin/Hotbar" unique_id=1347356240]
+custom_minimum_size = Vector2(120, 50)
+layout_mode = 2
+text = "Item B"
+
+[node name="Button3" type="Button" parent="HotbarMargin/Hotbar" unique_id=1491198944]
+custom_minimum_size = Vector2(120, 50)
+layout_mode = 2
+text = "Item C"
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1901665490]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="CenterContainer" unique_id=1095873956]
+layout_mode = 2
+
+[node name="MenuButtons" type="VBoxContainer" parent="CenterContainer/PanelContainer" unique_id=1124544954]
+layout_mode = 2
+
+[node name="Button1" type="Button" parent="CenterContainer/PanelContainer/MenuButtons" unique_id=1873264074]
+layout_mode = 2
+text = "Resume Game"
+
+[node name="Button2" type="Button" parent="CenterContainer/PanelContainer/MenuButtons" unique_id=1277784688]
+layout_mode = 2
+text = "Settings Panel"
+
+[node name="Button3" type="Button" parent="CenterContainer/PanelContainer/MenuButtons" unique_id=1637218135]
+layout_mode = 2
+text = "Quit to Desktop"

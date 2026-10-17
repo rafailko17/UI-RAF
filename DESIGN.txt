@@ -1,0 +1,54 @@
+==================================================
+PART 1: DESIGN IN WRITING
+==================================================
+
+1. HEALTH BAR (UI Element #1: ProgressBar)
+--------------------------------------------------
+- What states can it be in?
+  * Full, partially filled, empty (0%), damaged (flashing color).
+- How does content get in, and out?
+  * Receives health values from player script data. Shows visual bar fill (no input from player).
+- How does it work with no mouse?
+  * Non-interactive element. It displays values visually and does not take keyboard focus.
+- What confirms an action happened, or failed?
+  * Shrinks when taking damage; grows when healing.
+- What happens at zero, at maximum, at longest string?
+  * Zero: Empty bar / Player death state. Maximum: Full bar. Longest string: Text label uses auto-clipping.
+- Does it survive a save and load?
+  * Yes, current health value is saved to state file and restored on load.
+- How does a new player learn it exists?
+  * Fixed HUD position in top-left corner of the screen.
+
+2. HOTBAR (UI Element #2: HBoxContainer with Buttons)
+--------------------------------------------------
+- What states can it be in?
+  * Normal, Hovered, Focused (selected), Pressed, Disabled.
+- How does content get in, and out?
+  * Dragging items in from inventory, or assigning shortcut keys.
+- How does it work with no mouse?
+  * Navigated using Left/Right arrow keys. Pressing Enter or Space activates the slotted item.
+- What confirms an action happened, or failed?
+  * Visual press button animation and optional audio click.
+- What happens at zero, at maximum, at longest string?
+  * Zero: Empty slot graphic. Maximum: Slot occupied. Longest string: Text wraps or clips automatically.
+- Does it survive a save and load?
+  * Yes, slot contents and item IDs are saved.
+- How does a new player learn it exists?
+  * Placed prominently at the bottom center of the screen with key numbers [1], [2], [3] printed on slots.
+
+3. PAUSE MENU (UI Element #3: PanelContainer with VBoxContainer)
+--------------------------------------------------
+- What states can it be in?
+  * Hidden (unpaused), Visible (paused).
+- How does content get in, and out?
+  * Pressing 'Escape' opens or closes the menu.
+- How does it work with no mouse?
+  * Opening the menu automatically places keyboard focus on the first button ("Resume"). Up/Down arrow keys navigate; Enter selects.
+- What confirms an action happened, or failed?
+  * Screen dims, time pauses, and button focus shifts visually.
+- What happens at zero, at maximum, at longest string?
+  * Static menu with fixed choices. Long text automatically fits panel constraints.
+- Does it survive a save and load?
+  * Closed by default upon loading a saved game.
+- How does a new player learn it exists?
+  * Taught via standard game conventions (Esc key) or early tutorial pop-up.
